@@ -6,6 +6,10 @@ WebsiteStatus = namedtuple('WebsiteStatus', ['status_code', 'reason'])
 names = ['www.google.com', 'www.facebook.com']
 url="https://discord.com/api/webhooks/845475858/xxxxxxxxxxxxxxxxxxxxxxxx"
 
+############ Healthcheck code to check Status of API #################
+
+
+
 def get_status(site):
     try:
         response = requests.post(site, data=json.dumps({"query": '{__type(name:"Query") {name}}'}), headers={"Content-Type": "application/json"}, timeout=5)
